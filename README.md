@@ -1,3 +1,4 @@
+```
 select convert(char(10),getdate(),103)
 
 declare @cd_usuario char(10), @cd_tipo int 
@@ -27,7 +28,6 @@ SELECT @pub_var
 SELECT email,cd_aluno
 FROM aluno
 WHERE cd_aluno = @pub_var
-
-
+```
 
 
