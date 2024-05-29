@@ -45,3 +45,19 @@ SELECT * FROM sinistro_log
 
 -- Questão 3
 
+-- R: a) b) c) d) f)
+
+-- Questão 4
+
+CREATE PROC soma(@valor1 INT, @valor2 INT, @valor3 INT OUTPUT) AS
+
+BEGIN
+SELECT @valor3 = @valor1 + @valor2
+END
+
+
+DECLARE @resultado INT
+
+EXEC soma 2,2,@resultado OUTPUT 
+SELECT @resultado AS Conta
+
