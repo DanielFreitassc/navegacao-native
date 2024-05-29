@@ -74,4 +74,12 @@ GO
 
 SELECT dbo.fn_quantidade_apolices(2) AS Qtde_apolices
 
+-- Questão 6
+
+-- R: Nenhum parâmetro; Paramentros de entrada e saída; Somente parametros de entrada.
+
+-- Questão 7
+
+-- Resposta Um trigger é equivalente a uma stored procedure, inclusive pelo fato de retornar um valor.
+
 
