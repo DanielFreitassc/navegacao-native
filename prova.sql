@@ -61,3 +61,17 @@ DECLARE @resultado INT
 EXEC soma 2,2,@resultado OUTPUT 
 SELECT @resultado AS Conta
 
+-- Questão 5
+
+CREATE OR ALTER FUNCTION fn_quantidade_apolices (@cod_cliente INT) RETURNS INT AS
+
+BEGIN
+	DECLARE @resultado INT
+	SELECT @resultado = COUNT(cod_cliente) FROM apolice WHERE cod_cliente = @cod_cliente
+	RETURN @resultado
+END
+GO
+
+SELECT dbo.fn_quantidade_apolices(2) AS Qtde_apolices
+
+
