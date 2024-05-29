@@ -1,4 +1,4 @@
--- Questão 1
+ -- Questão 1
 CREATE OR ALTER FUNCTION fn_conta_sinistro (@placa varchar(10)) RETURNS INT AS
 BEGIN
 DECLARE @resultado INT
@@ -82,4 +82,34 @@ SELECT dbo.fn_quantidade_apolices(2) AS Qtde_apolices
 
 -- Resposta Um trigger é equivalente a uma stored procedure, inclusive pelo fato de retornar um valor.
 
+
+-- Questão 8
+
+-- Trigger
+
+-- Questão 9
+
+CREATE OR ALTER PROC pr_sinistro (@placa varchar(10), @sinistro INT OUTPUT) AS
+BEGIN
+
+SELECT @sinistro = count(placa) FROM sinistro WHERE placa = @placa
+SELECT @sinistro AS qtde
+END
+
+DECLARE @resultado INT
+EXEC dbo.pr_sinistro 'ALD3834',@resultado output 
+
+
+-- Questão 10
+
+CREATE FUNCTION fn_idade(@data datetime) returns int as
+
+BEGIN
+DECLARE @idade int
+SELECT @idade = FLOOR(datediff(day,@data,GETDATE())/365.25)
+return @idade
+END
+
+
+SELECT dbo.fn_idade('07/02/2003') AS idade;
 
