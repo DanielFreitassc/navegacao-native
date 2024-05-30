@@ -1,4 +1,3 @@
- -- Questão 1
 CREATE OR ALTER FUNCTION fn_conta_sinistro (@placa varchar(10)) RETURNS INT AS
 BEGIN
 DECLARE @resultado INT
@@ -10,8 +9,6 @@ GO
 
 select *,dbo.fn_conta_sinistro(placa) as qtde FROM carro
 
-
--- Questão 2
 
 CREATE TABLE sinistro_log(
 dt_insercao DATETIME,
@@ -43,11 +40,6 @@ GO
 
 SELECT * FROM sinistro_log
 
--- Questão 3
-
--- R: a) b) c) d) f)
-
--- Questão 4
 
 CREATE PROC soma(@valor1 INT, @valor2 INT, @valor3 INT OUTPUT) AS
 
@@ -61,7 +53,6 @@ DECLARE @resultado INT
 EXEC soma 2,2,@resultado OUTPUT 
 SELECT @resultado AS Conta
 
--- Questão 5
 
 CREATE OR ALTER FUNCTION fn_quantidade_apolices (@cod_cliente INT) RETURNS INT AS
 
@@ -74,21 +65,6 @@ GO
 
 SELECT dbo.fn_quantidade_apolices(2) AS Qtde_apolices
 
--- Questão 6
-
--- R: Nenhum parâmetro; Paramentros de entrada e saída; Somente parametros de entrada.
-
--- Questão 7
-
--- Resposta Um trigger é equivalente a uma stored procedure, inclusive pelo fato de retornar um valor.
-
-
--- Questão 8
-
--- Trigger
-
--- Questão 9
-
 CREATE OR ALTER PROC pr_sinistro (@placa varchar(10), @sinistro INT OUTPUT) AS
 BEGIN
 
@@ -100,8 +76,6 @@ DECLARE @resultado INT
 EXEC dbo.pr_sinistro 'ALD3834',@resultado output 
 
 
--- Questão 10
-
 CREATE FUNCTION fn_idade(@data datetime) returns int as
 
 BEGIN
@@ -109,7 +83,6 @@ DECLARE @idade int
 SELECT @idade = FLOOR(datediff(day,@data,GETDATE())/365.25)
 return @idade
 END
-
 
 SELECT dbo.fn_idade('07/02/2003') AS idade;
 
