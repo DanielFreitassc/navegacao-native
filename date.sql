@@ -1,1 +1,0 @@
-select convert(char(10),getdate(),103)
